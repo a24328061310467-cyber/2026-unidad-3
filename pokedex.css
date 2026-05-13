@@ -1,0 +1,121 @@
+html{
+    background-color: #4FC3D7;
+}
+
+body{
+    background-color: #4FC3D7;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ELIMINA FONDOS EXTRA */
+*{
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+/* CONTENEDOR */
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* IZQUIERDA */
+.info{
+    width: 30%;
+    color: white;
+}
+
+/* TITULO */
+h1{
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* IMAGEN GARDEVOIR */
+.fondo{
+    width: 220px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+.placeholder{
+    width: 220px;
+    height: 45px;
+    font-size: 22px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f9ee60;
+    padding-left: 10px;
+    outline: none;
+}
+
+/* BOTON */
+.button{
+    width: 120px;
+    height: 45px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00aaf7;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* CENTRO */
+.pokemon-container{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* DERECHA */
+.datos{
+    width: 30%;
+    color: white;
+    text-align: center;
+}
+
+/* TEXTO */
+.pokeimg1{
+    font-size: 16px;
+    margin: 8px 0;
+    color: white;
+}
+
+/* ID */
+.pokeid{
+    font-size: 80px;
+    color: yellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 3px 3px 3px rgba(153, 102, 255, 0.5);
+}
+
+/* ORDER */
+.pokeorder{
+    font-size: 25px;
+    color: orange;
+}
+
+/* GRAFICA */
+#miCanvas{
+    width: 100%;
+    max-width: 500px;
+}
+
+/* IMAGENES */
+img{
+    max-width: 100%;
+}
