@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pokedex.css">
+    <title>Pokedex</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- IZQUIERDA -->
+        <div class="info">
+
+            <h1>MAESTRO POKEMON: JONATHAN CRUZ</h1>
+
+          <!-- <img src="Gardevoir-1.webp" class="fondo"> -->
+           
+            <div id="pokename" class="pokeimg1"></div>
+
+            <div id="pokeHe" class="pokeimg1"></div>
+
+            <div id="pokeWe" class="pokeimg1"></div>
+
+            <div id="poketype" class="pokeimg1"></div>
+
+            <div id="pokeitem" class="pokeimg1"></div>
+
+            <div id="pokemove1" class="pokeimg1"></div>
+
+            <div id="pokemove2" class="pokeimg1"></div>
+
+            <div id="pokemove3" class="pokeimg1"></div>
+
+            <div id="pokemove4" class="pokeimg1"></div>
+
+            <input 
+            type="text"
+            placeholder="Pikachu"
+            id="pokeName"
+            name="pokeName"
+            class="placeholder">
+
+            <button onclick="fetchPokemon()" class="button">
+                Presiona
+            </button>
+
+        </div>
+
+        <!-- CENTRO -->
+        <div class="pokemon-container">
+
+           <img 
+src="cynthia.jpg"
+alt="PokeMaster"
+id="pokeImg"
+style="
+width:220px;
+height:220px;
+object-fit:contain;
+display:block;
+margin:auto;
+">
+        </div>
+
+        <!-- DERECHA -->
+        <div class="datos">
+
+            <div id="pokeorder" class="pokeorder"></div>
+
+            <div id="pokeid" class="pokeid"></div>
+
+            <canvas id="miCanvas" width="500" height="300"></canvas>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="pokedex.js"></script>
+
+</body>
+</html>
