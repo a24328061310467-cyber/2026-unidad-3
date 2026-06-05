@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+    <title>Jonathan Cruz Ventura</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="pokedex.css">
+    <link rel="stylesheet" href="estilopeliculas.css">
+    <link href="https://fonts.cdnfonts.com/css/screamous" rel="stylesheet">
 </head>
 
 <body>
@@ -65,96 +66,23 @@
         </div>
     </nav>
 
-    <h1 class="titulo">
-        MAESTRO POKEMON: <br> JONATHAN CRUZ VENTURA
-    </h1>
-
     <div class="container">
-
-        <div class="info">
-
-            <div id="pokename" class="pokeimg1">
-                Name:
-            </div>
-
-            <div id="pokeid" class="pokeid">
-                Id:
-            </div>
-
-            <div id="pokeorder" class="pokeorder">
-                Order:
-            </div>
-
-            <div id="pokeHe" class="pokeimg1">
-                Height:
-            </div>
-
-            <div id="pokeWe" class="pokeimg1">
-                Weight:
-            </div>
-
-            <div id="poketype" class="pokeimg1">
-                Type:
-            </div>
-
-            <div id="pokeitem" class="pokeimg1">
-                Ability:
-            </div>
-
-            <div id="pokemove1" class="pokeimg1">
-                Move 1:
-            </div>
-
-            <div id="pokemove2" class="pokeimg1">
-                Move 2:
-            </div>
-
-            <div id="pokemove3" class="pokeimg1">
-                Move 3:
-            </div>
-
-            <div id="pokemove4" class="pokeimg1">
-                Move 4:
-            </div>
-
-        </div>
-
-        <div class="centro">
-
-            <img 
-            src="cynthia.jpg"
-            alt="Entrenador Pokemon"
-            class="mew">
-
-            <input 
-            type="text"
-            placeholder="Pikachu"
-            id="pokeName"
-            name="pokeName"
-            class="placeholder">
-
-            <button onclick="fetchPokemon()" class="button">
-                PRESIONA
-            </button>
-
-        </div>
-
-        <div class="pokemon-container">
-
-            <img 
-            src="Gardevoir-1.webp"
-            alt="Pokemon"
-            id="pokeImg">
-
-            <canvas id="miCanvas" width="300" height="200"></canvas>
-
-        </div>
-
+        <h1>Jonathan Cruz Ventura</h1>
+        <h3>Buscador de Películas</h3>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <form id="form">
+        <input 
+            type="text" 
+            id="search" 
+            placeholder="Pokemon Arceus y la joya de la vida"
+        >
+        <input type="submit" value="Buscar">
+    </form>
 
-    <script src="pokedex.js"></script>
+    <main id="main"></main>
+
+    <script src="peliculas.js"></script>
 
 </body>
 </html>

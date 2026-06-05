@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container{
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* TITULO */
+h1{
+    color: white;
+    font-family: 'Screamous', sans-serif;
+    margin-bottom: 15px;
+}
+
+/* SUBTITULO */
+.container h3{
+    color: #cd9d18;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* FORMULARIO */
+form{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* INPUT */
+input[type="text"]{
+    width: 300px;
+    padding: 12px;
+    border-radius: 20px;
+    border: 2px solid #cd9d18;
+    font-size: 16px;
+    outline: none;
+}
+
+/* BOTON */
+input[type="submit"]{
+    padding: 12px 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #cd9d18;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* HOVER BOTON */
+input[type="submit"]:hover{
+    background-color: brown;
+    color: white;
+}
+
+/* CONTENEDOR DE PELICULAS */
+#main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 20px;
+}
+
+/* TARJETAS */
+.movie{
+    position: relative;
+    width: 250px;
+    max-width: 250px;
+    background-color: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0px 4px 10px rgba(255,255,255,0.1);
+}
+
+/* EFECTO HOVER */
+.movie:hover{
+    transform: scale(1.05);
+}
+
+/* IMAGEN */
+.movie img{
+    width: 250px;
+    height: 370px;
+    object-fit: cover;
+    display: block;
+}
+
+/* INFORMACION */
+.movie-info{
+    padding: 15px;
+    color: white;
+    position: relative;
+}
+
+/* TITULO DE PELICULA */
+.movie-info h3{
+    font-size: 16px;
+    margin-right: 10px;
+    color: white;
+    text-align: left;
+}
+
+/* CALIFICACION OCULTA */
+.movie-info span{
+    position: absolute;
+    top: -45px;
+    right: 10px;
+
+    background-color: black;
+    padding: 8px 12px;
+    border-radius: 10px;
+
+    opacity: 0;
+    transition: 0.3s;
+
+    font-weight: bold;
+}
+
+/* MOSTRAR CALIFICACION EN HOVER */
+.movie:hover .movie-info span{
+    opacity: 1;
+}
+
+/* OVERVIEW */
+.overview{
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* TITULOS DEL OVERVIEW */
+.overview h3{
+    color: #cd9d18;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* TEXTO */
+.overview p{
+    margin-bottom: 10px;
+}
+
+/* COLORES DE CALIFICACION */
+.green{
+    color: lime;
+    font-weight: bold;
+}
+
+.orange{
+    color: orange;
+    font-weight: bold;
+}
+
+.red{
+    color: red;
+    font-weight: bold;
+}
+.navbar {
+    background-color: #ffffff !important;
+    border: none !important;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Centrar los elementos del menú */
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: table;
+}
+
+/* Estilo de las letras principales (Inicio, Unidad 1, etc) */
+.navbar-default .navbar-nav > li > a {
+    color: #000000 !important;
+    font-family: "Lobster Two", sans-serif;
+    font-size: 24px; /* Un poco más grande para que luzca la tipografía */
+    font-weight: bold;
+    padding: 20px 25px; /* Espaciado interno */
+    transition: 0.2s;
+}
+
+/* Efecto al pasar el mouse por encima de las opciones */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #6C427A !important; /* Cambia a morado sutil al pasar el mouse */
+    background-color: transparent !important;
+}
+
+/* Estilo del menú desplegable (Dropdown) */
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu > li > a {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 18px;
+    color: #333333 !important;
+    padding: 10px 20px;
+}
+
+.dropdown-menu > li > a:hover {
+    color: #000000 !important;
+}

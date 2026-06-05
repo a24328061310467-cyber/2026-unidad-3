@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+    <title>Overwatch Heroes</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
@@ -14,9 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="pokedex.css">
+    <link rel="stylesheet" href="overwact.css">
 </head>
-
 <body>
 
     <nav class="navbar navbar-default">
@@ -65,96 +64,43 @@
         </div>
     </nav>
 
-    <h1 class="titulo">
-        MAESTRO POKEMON: <br> JONATHAN CRUZ VENTURA
-    </h1>
+    <header>
+        <h1>OVERWATCH HEROES</h1>
+        <h2>JONATHAN CRUZ VENTURA</h2>
 
-    <div class="container">
-
-        <div class="info">
-
-            <div id="pokename" class="pokeimg1">
-                Name:
-            </div>
-
-            <div id="pokeid" class="pokeid">
-                Id:
-            </div>
-
-            <div id="pokeorder" class="pokeorder">
-                Order:
-            </div>
-
-            <div id="pokeHe" class="pokeimg1">
-                Height:
-            </div>
-
-            <div id="pokeWe" class="pokeimg1">
-                Weight:
-            </div>
-
-            <div id="poketype" class="pokeimg1">
-                Type:
-            </div>
-
-            <div id="pokeitem" class="pokeimg1">
-                Ability:
-            </div>
-
-            <div id="pokemove1" class="pokeimg1">
-                Move 1:
-            </div>
-
-            <div id="pokemove2" class="pokeimg1">
-                Move 2:
-            </div>
-
-            <div id="pokemove3" class="pokeimg1">
-                Move 3:
-            </div>
-
-            <div id="pokemove4" class="pokeimg1">
-                Move 4:
-            </div>
-
-        </div>
-
-        <div class="centro">
-
-            <img 
-            src="cynthia.jpg"
-            alt="Entrenador Pokemon"
-            class="mew">
-
-            <input 
+        <input 
             type="text"
-            placeholder="Pikachu"
-            id="pokeName"
-            name="pokeName"
-            class="placeholder">
+            id="search"
+            placeholder="Buscar héroe..."
+        >
 
-            <button onclick="fetchPokemon()" class="button">
-                PRESIONA
-            </button>
-
+        <div class="filters">
+            <button onclick="filterHeroes('all')">Todos</button>
+            <button onclick="filterHeroes('tank')">Tank</button>
+            <button onclick="filterHeroes('damage')">Damage</button>
+            <button onclick="filterHeroes('support')">Support</button>
         </div>
+    </header>
 
-        <div class="pokemon-container">
+    <main id="hero-container"></main>
 
-            <img 
-            src="Gardevoir-1.webp"
-            alt="Pokemon"
-            id="pokeImg">
-
-            <canvas id="miCanvas" width="300" height="200"></canvas>
-
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body"></div>
         </div>
-
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <div class="language-buttons">
+        <button onclick="changeLanguage('es')">
+            Español 🇲🇽
+        </button>
+        <button onclick="changeLanguage('en')">
+            English 🇺🇸
+        </button>
+    </div>
 
-    <script src="pokedex.js"></script>
+    <script src="overwacht.js"></script>
 
 </body>
 </html>

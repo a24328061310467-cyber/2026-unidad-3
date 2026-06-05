@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Primera página</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- Bootstrap 3 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<!-- Fuente Lobster Two -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    background-color:#FFE66D;
+    font-family: "Lobster Two", sans-serif;
+}
+
+h1{
+    color:#2E0A16;
+    text-align:center;
+}
+
+.navbar{
+    background-color:#6C427A;
+    border:none;
+}
+
+.navbar-brand,
+.navbar-nav > li > a{
+    color:black !important;
+    font-family:"Lobster Two", sans-serif;
+}
+
+.dropdown-menu > li > a{
+    color:black;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+<div class="container">
+
+<div class="navbar-header">
+<a class="navbar-brand" href="index.html">Inicio</a>
+</div>
+
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="nav navbar-nav">
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+Unidad 1 <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="mostrar.php">Mostrar Datos</a></li>
+<li><a class="dropdown-item" href="meterdatos01.php">Meter Datos</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+Unidad 2 <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="relaciones1.php">relaciones</a></li>
+<li><a class="dropdown-item" href="pokemon.php">registro pokemon</a></li>
+<li><a class="dropdown-item" href="tarjetas.php">pokemon registrados</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+Unidad 3 <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="pokedex.html">pokedex</a></li>
+<li><a class="dropdown-item" href="peliculas.html">peliculas</a></li>
+<li><a class="dropdown-item" href="overwacht.html">Overwatch</a></li>
+</ul>
+</li>
+
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="container">
+<div class="jumbotron">
+
+<h1>Bienvenidos</h1>
+
+<p class="lead">
+Esta es mi página principal.
+</p>
+
+<hr>
+
+<p>
+Aquí puedes acceder a las actividades de cada unidad.
+</p>
+
+<p>
+<a class="btn btn-primary btn-lg" href="#" role="button">Ver más</a>
+</p>
+
+</div>
+</div>
+
+</body>
+</html>

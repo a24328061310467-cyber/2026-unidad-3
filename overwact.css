@@ -1,0 +1,633 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(-45deg, #121212, #20232a, #181818, #2a2a2a);
+
+    background-size: 400% 400%;
+
+    animation: backgroundMove 10s ease infinite;
+}
+
+/* HEADER */
+
+header{
+    text-align: center;
+    padding: 30px;
+}
+
+h1{
+    color: #f99e1a;
+    margin-bottom: 20px;
+    font-size: 3rem;
+
+    text-shadow: 0 0 10px rgba(249, 158, 26, 0.8);
+}
+
+/* BUSCADOR */
+
+#search{
+    width: 300px;
+    max-width: 90%;
+
+    padding: 12px;
+
+    border: 2px solid #f99e1a;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background-color: #20232a;
+
+    color: white;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+
+    transition: 0.3s;
+}
+
+#search::placeholder{
+    color: #ccc;
+}
+
+#search:focus{
+
+    box-shadow: 0 0 15px #f99e1a;
+
+    transform: scale(1.02);
+}
+
+/* IDIOMAS */
+
+.language-buttons{
+    margin-bottom: 20px;
+}
+
+.language-buttons button{
+    padding: 10px 15px;
+
+    margin: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #f99e1a;
+
+    color: black;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.language-buttons button:hover{
+    background-color: white;
+
+    transform: scale(1.05);
+}
+
+/* BOTONES */
+
+.filters button{
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f99e1a;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button:hover{
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* HEROES */
+
+#hero-container{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.card{
+    background-color: #20232a;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+    cursor: pointer;
+
+    animation: cardAppear 0.5s ease;
+}
+
+.card:hover{
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 20px #f99e1a;
+}
+
+.card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content{
+    padding: 15px;
+}
+
+.card h2{
+    color: #f99e1a;
+    margin-bottom: 10px;
+}
+
+.role{
+    background-color: #f99e1a;
+    color: black;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* MODAL */
+
+.modal{
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.8);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    animation: modalAnimation 0.4s ease;
+}
+
+.close-btn{
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-size: 35px;
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 100;
+
+    transition: 0.3s;
+}
+
+.close-btn:hover{
+
+    transform: rotate(90deg);
+
+    color: #f99e1a;
+}
+
+/* HEROE */
+
+.hero-details{
+
+    display: flex;
+
+    align-items: stretch;
+
+    background-color: #181818;
+}
+
+/* IMAGEN */
+
+.hero-image{
+
+    flex: 1;
+}
+
+.hero-image img{
+
+    width: 100%;
+
+    height: 650px;
+
+    object-fit: cover;
+
+    filter: brightness(0.75);
+}
+
+/* INFORMACION */
+
+.hero-info{
+
+    flex: 1;
+
+    padding: 30px;
+
+    background: rgba(20,20,20,0.88);
+
+    backdrop-filter: blur(6px);
+
+    overflow-y: auto;
+
+    border-left: 2px solid rgba(255,255,255,0.08);
+}
+
+.hero-info h2{
+
+    color: #f99e1a;
+
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+}
+
+.hero-info p{
+
+    margin-bottom: 15px;
+
+    line-height: 1.7;
+
+    color: #f0f0f0;
+}
+
+/* HABILIDADES */
+
+.abilities{
+    margin-top: 20px;
+}
+
+.ability{
+
+    background-color: rgba(255,255,255,0.08);
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    border-left: 4px solid #f99e1a;
+
+    transition: 0.3s;
+}
+
+.ability:hover{
+
+    transform: translateX(5px);
+
+    background-color: rgba(255,255,255,0.12);
+}
+
+.ability h3{
+
+    color: #f99e1a;
+
+    margin-bottom: 10px;
+}
+
+/* ANIMACIONES */
+
+@keyframes modalAnimation{
+
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundMove{
+
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-details{
+
+        flex-direction: column;
+    }
+
+    .hero-image img{
+
+        height: 400px;
+    }
+
+    .hero-info h2{
+
+        font-size: 2rem;
+    }
+}
+
+
+.modal{
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* Un fondo oscuro un poco más sutil para que resalte la tarjeta */
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+    width: 90%;
+    /* Reducimos el ancho máximo para que parezca una tarjeta vertical flotante */
+    max-width: 950px; 
+    border-radius: 24px; /* Bordes más redondeados y suaves */
+    overflow: hidden;
+    position: relative;
+    animation: modalAnimation 0.4s ease;
+    
+    /* Efecto de cristal translúcido (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.65); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
+    /* Borde fino blanco semitransparente para dar el efecto de cristal tallado */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    
+    /* Sombra suave y difuminada */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    padding: 20px; /* Separación interna para que el contenido no toque los bordes */
+}
+
+.close-btn{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    /* Cambiado a gris oscuro/azul para que contraste con el fondo claro */
+    color: #4a5568; 
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.close-btn:hover{
+    transform: rotate(90deg);
+    color: #3182ce; /* Cambia a un tono azul al pasar el mouse */
+}
+
+/* HEROE */
+
+.hero-details{
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto al centro verticalmente */
+    gap: 30px; /* Espacio entre la imagen de la izquierda y el texto de la derecha */
+    background-color: transparent; /* Quitamos el fondo oscuro */
+}
+
+/* IMAGEN */
+
+.hero-image{
+    flex: 1.1; /* Le damos un poco más de peso visual a la imagen */
+}
+
+.hero-image img{
+    width: 100%;
+    height: auto; /* Dejamos que la altura se adapte a la imagen */
+    max-height: 600px;
+    object-fit: contain; /* Para que no se corte el arte del personaje */
+    filter: none; /* Quitamos la oscuridad para que luzca el arte original */
+    border-radius: 16px;
+}
+
+/* INFORMACION */
+
+.hero-info{
+    flex: 1.2;
+    padding: 20px;
+    /* Quitamos los fondos oscuros previos ya que el modal-content maneja el cristal */
+    background: transparent; 
+    backdrop-filter: none; 
+    -webkit-backdrop-filter: none;
+    overflow-y: auto;
+    border-left: none; /* Quitamos la línea divisoria rígida */
+    
+    /* Cambiamos el texto a colores oscuros/azulados como en la imagen */
+    color: #2d3748; 
+}
+
+/* Estilo para los títulos de las secciones principales (BIOGRAFÍA, PODERES, etc.) */
+.hero-info h2, .abilities-title{
+    color: #2c5282; /* Azul corporativo/militar de la ficha */
+    font-size: 1.4rem;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(44, 82, 130, 0.2); /* Línea sutil debajo del título */
+    padding-bottom: 4px;
+}
+
+/* El nombre del personaje principal arriba del todo (ej: PERFIL DE PERSONAJE) */
+.hero-info .char-title {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.hero-info p{
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #4a5568; /* Gris oscuro para mejorar la legibilidad */
+    font-size: 0.95rem;
+}
+
+/* HABILIDADES (Adaptadas al estilo de lista de la imagen) */
+
+.abilities{
+    margin-top: 15px;
+}
+
+.ability{
+    /* Quitamos el fondo de caja individual para que sea una lista limpia */
+    background-color: transparent; 
+    padding: 5px 0;
+    border-radius: 0;
+    margin-bottom: 12px;
+    border-left: none; /* Quitamos el borde naranja de Overwatch */
+    transition: none;
+}
+
+.ability:hover{
+    transform: none;
+    background-color: transparent;
+}
+
+/* Nombre del poder en mayúsculas y negrita */
+.ability h3{
+    color: #2b6cb0; 
+    font-size: 1rem;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Descripción del poder */
+.ability p {
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+    .hero-details{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero-image img{
+        height: 350px;
+        object-fit: contain;
+    }
+    .modal-content {
+        padding: 15px;
+        overflow-y: auto;
+        max-height: 90vh; /* Evita que el modal se salga de las pantallas móviles */
+    }
+}
+/* ==========================================
+   ESTILOS DE LA BARRA DE NAVEGACIÓN (BLANCA)
+   ========================================== */
+
+/* Fondo de la barra y borde inferior amarillo */
+.navbar {
+    background-color: #ffffff !important;
+    border: none !important;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Centrar los elementos del menú */
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: table;
+}
+
+/* Estilo de las letras principales (Inicio, Unidad 1, etc) */
+.navbar-default .navbar-nav > li > a {
+    color: #000000 !important;
+    font-family: "Lobster Two", sans-serif;
+    font-size: 24px; /* Un poco más grande para que luzca la tipografía */
+    font-weight: bold;
+    padding: 20px 25px; /* Espaciado interno */
+    transition: 0.2s;
+}
+
+/* Efecto al pasar el mouse por encima de las opciones */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #6C427A !important; /* Cambia a morado sutil al pasar el mouse */
+    background-color: transparent !important;
+}
+
+/* Estilo del menú desplegable (Dropdown) */
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu > li > a {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 18px;
+    color: #333333 !important;
+    padding: 10px 20px;
+}
+
+.dropdown-menu > li > a:hover {
+    color: #000000 !important;
+}

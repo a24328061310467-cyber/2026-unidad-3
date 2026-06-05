@@ -1,105 +1,115 @@
-
 const fetchPokemon = () => {
     const pokeNameInput = document.getElementById("pokeName");
-    let pokeName = pokeNameInput.value;
-    pokeName = pokeName.toLowerCase();
+    let pokeName = pokeNameInput.value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
 
-    fetch(url).then((res) => {
+    fetch(url)
+    .then((res) => {
         if (res.status != "200") {
             console.log(res);
             pokeImage("./pokemon-sad.gif");
-        }
-        else {
+        } else {
             return res.json();
         }
-    }).then((data) => {
+    })
+    .then((data) => {
         if (data) {
             console.log(data);
 
+            // IMAGEN
             let pokeImg = data.sprites.front_default;
             pokeImage(pokeImg);
 
-            let name = document.getElementById('pokename');
-            name.innerHTML = `Name: ${data.forms[0].name}`;
+            // DATOS
+            document.getElementById('pokename').innerHTML = `Name: ${data.forms[0].name}`;
+            document.getElementById('pokeHe').innerHTML = `Height: ${data.height}`;
+            document.getElementById('pokeWe').innerHTML = `Weight: ${data.weight}`;
+            document.getElementById('pokeorder').innerHTML = `Order: #${data.order}`;
+            document.getElementById('pokeid').innerHTML = `Id: #${data.id}`;
+            document.getElementById('pokeitem').innerHTML = `Ability: ${data.abilities[0].ability.name}`;
+            document.getElementById('poketype').innerHTML = `Type: ${data.types[0].type.name}`;
+            document.getElementById('pokemove1').innerHTML = `Move 1: ${data.moves[0].move.name}`;
+            document.getElementById('pokemove2').innerHTML = `Move 2: ${data.moves[1].move.name}`;
+            document.getElementById('pokemove3').innerHTML = `Move 3: ${data.moves[2].move.name}`;
+            document.getElementById('pokemove4').innerHTML = `Move 4: ${data.moves[3].move.name}`;
 
-            let element1 = document.getElementById('pokeHe');
-            element1.innerHTML = `Height: ${data.height}`;
+            // ===== GRAFICA (MODIFICADA A BARRAS CON TUS COLORES) =====
+            const canvas = document.getElementById("miCanvas");
+            const ctx = canvas.getContext("2d");
 
-            let element2 = document.getElementById('pokeWe');
-            element2.innerHTML = `Weight: ${data.weight}`;
+            // ELIMINAR GRAFICA ANTERIOR
+            if (window.miGrafica) {
+                window.miGrafica.destroy();
+            }
 
-            let element3 = document.getElementById('pokeorder');
-            element3.innerHTML = `Order: #${data.order}`;
-
-            let element4 = document.getElementById('pokeid');
-            element4.innerHTML = `Id: #${data.id}`;
-
-            let element5 = document.getElementById('pokeitem');
-            element5.innerHTML = `Ability: ${data.abilities[0].ability.name}`;
-
-            let element6 = document.getElementById('poketype');
-            element6.innerHTML = `Type: ${data.types[0].type.name}`;
-
-            let element7 = document.getElementById('pokemove1');
-            element7.innerHTML = `Move 1: ${data.moves[0].move.name}`;
-
-            let element8 = document.getElementById('pokemove2');
-            element8.innerHTML = `Move 2: ${data.moves[1].move.name}`;
-
-            let element9 = document.getElementById('pokemove3');
-            element9.innerHTML = `Move 3: ${data.moves[2].move.name}`;
-
-            let element10 = document.getElementById('pokemove4');
-            element10.innerHTML = `Move 4: ${data.moves[3].move.name}`;
-
-            const miCanvas = document.getElementById("miCanvas").getContext("2d");
-            if (window.miCanvas != undefined)
-                window.miCanvas.destroy();
-            window.miCanvas = new Chart(miCanvas, {
-                type: "bar",
+            // CREAR NUEVA GRAFICA DE BARRAS
+            window.miGrafica = new Chart(ctx, {
+                type: "bar", // <- Cambiado de 'radar' a 'bar'
                 data: {
-                    labels: ["HP", "Attack", "Defense", "Special-A", "Special-D", "Speed"],
+                    labels: [
+                        "HP",
+                        "Attack",
+                        "Defense",
+                        "Special-A",
+                        "Special-D",
+                        "Speed"
+                    ],
                     datasets: [
                         {
-                            label: `${data.forms[0].name}`,
-                            backgroundColor: 'rgba(54, 162, 235, 1)',
+                            label: 'Estadísticas Base',
                             data: [
-                                `${data.stats[0].base_stat}`, 
-                                `${data.stats[1].base_stat}`, 
-                                `${data.stats[2].base_stat}`, 
-                                `${data.stats[3].base_stat}`, 
-                                `${data.stats[4].base_stat}`, 
-                                `${data.stats[5].base_stat}`
+                                data.stats[0].base_stat, // HP
+                                data.stats[1].base_stat, // Attack
+                                data.stats[2].base_stat, // Defense
+                                data.stats[3].base_stat, // Special-A
+                                data.stats[4].base_stat, // Special-D
+                                data.stats[5].base_stat  // Speed
                             ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)'
-                            ],
-                            borderWidth: 1,
+                            // Azul vibrante igual al de tu botón principal
+                            backgroundColor: 'rgba(0, 162, 255, 0.85)',
+                            hoverBackgroundColor: 'rgba(0, 130, 215, 1)',
+                            
+                            // Bordes ligeramente redondeados en las puntas de las barras
+                            borderRadius: 6,
+                            borderSkipped: false
                         }
                     ]
                 },
                 options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false // Ocultamos la leyenda para una vista limpia como la muestra
+                        }
+                    },
                     scales: {
-                        x: {
+                        // Configuración del Eje Y (Valores numéricos)
+                        y: {
+                            beginAtZero: true,
+                            max: 150, // Límite estándar ideal para estadísticas Pokémon
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.2)' // Líneas horizontales sutiles en blanco
+                            },
                             ticks: {
-                                maxRotation: 90,
-                                minRotation: 90,
-                                color: 'purple',
-                                font: { size: 15 },
+                                color: 'white', // Números en blanco
+                                font: {
+                                    weight: 'bold',
+                                    size: 11
+                                }
+                            }
+                        },
+                        // Configuración del Eje X (Nombres de las estadísticas)
+                        x: {
+                            grid: {
+                                display: false // Quitamos las líneas de fondo verticales
+                            },
+                            ticks: {
+                                color: 'white', // Letras en blanco
+                                font: {
+                                    weight: 'bold',
+                                    size: 11
+                                }
                             }
                         }
                     }
@@ -109,7 +119,8 @@ const fetchPokemon = () => {
     });
 };
 
+// CAMBIAR IMAGEN
 const pokeImage = (url) => {
     const pokePhoto = document.getElementById("pokeImg");
     pokePhoto.src = url;
-}
+};
